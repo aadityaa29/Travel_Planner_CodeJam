@@ -247,11 +247,7 @@ export default function InformationCard({ trip }) {
                 text="Cost of Transportation"
                 onClick={() => setSelectedSection("transportation")}
               />
-              <SidebarItem
-                icon={<BackpackIcon />}
-                text="Packing Checklist"
-                onClick={() => setSelectedSection("packing")}
-              />
+              
             </nav>
           </div>
         </aside>

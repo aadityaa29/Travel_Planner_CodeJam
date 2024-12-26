@@ -30,27 +30,35 @@ function Activities({ trip }) {
         </CardHeader>
         <CardContent>
           <ScrollArea.Root className="h-[40vh] overflow-y-scroll">
-            <ScrollArea.Viewport className="px-4">
-              {Object.entries(activityPreferences).map(([category, activities], index) => (
-                <motion.div
-                  key={index}
-                  className="mb-10"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <h3 className="font-bold text-xl text-gray-700 mb-4 border-b-2 pb-2 border-indigo-300 capitalize">
-                    {category.replace(/([A-Z])/g, " $1")}
-                  </h3>
-                  <ul className="list-disc pl-6 text-gray-700">
-                    {activities.map((activity, idx) => (
-                      <li key={idx} className="mb-2">
-                        {activity}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
+            <ScrollArea.Viewport className="px-4 py-2">
+              {activityPreferences && Object.entries(activityPreferences).length > 0 ? (
+                Object.entries(activityPreferences).map(([category, activities], index) => (
+                  <motion.div
+                    key={index}
+                    className="mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <h3 className="font-bold text-xl text-gray-700 mb-4 border-b-2 pb-2 border-indigo-300 capitalize">
+                      {category.replace(/([A-Z])/g, " $1")}
+                    </h3>
+                    <ul className="list-disc pl-6 text-gray-700">
+                      {Array.isArray(activities) && activities.length > 0 ? (
+                        activities.map((activity, idx) => (
+                          <li key={idx} className="mb-2">
+                            {activity}
+                          </li>
+                        ))
+                      ) : (
+                        <p className="text-sm text-gray-500">No activities available.</p>
+                      )}
+                    </ul>
+                  </motion.div>
+                ))
+              ) : (
+                <p className="text-sm text-gray-500">No activity preferences available.</p>
+              )}
             </ScrollArea.Viewport>
           </ScrollArea.Root>
         </CardContent>
@@ -65,28 +73,36 @@ function Activities({ trip }) {
         </CardHeader>
         <CardContent>
           <ScrollArea.Root className="h-[40vh] overflow-y-scroll">
-            <ScrollArea.Viewport className="px-4">
-              {Object.entries(additionalRecommendations).map(
-                ([category, recommendations], index) => (
-                  <motion.div
-                    key={index}
-                    className="mb-10"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <h3 className="font-bold text-xl text-gray-700 mb-4 border-b-2 pb-2 border-indigo-300 capitalize">
-                      {category.replace(/([A-Z])/g, " $1")}
-                    </h3>
-                    <ul className="list-disc pl-6 text-gray-700">
-                      {recommendations.map((recommendation, idx) => (
-                        <li key={idx} className="mb-2">
-                          {recommendation}
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
+            <ScrollArea.Viewport className="px-4 py-2">
+              {additionalRecommendations && Object.entries(additionalRecommendations).length > 0 ? (
+                Object.entries(additionalRecommendations).map(
+                  ([category, recommendations], index) => (
+                    <motion.div
+                      key={index}
+                      className="mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <h3 className="font-bold text-xl text-gray-700 mb-4 border-b-2 pb-2 border-indigo-300 capitalize">
+                        {category.replace(/([A-Z])/g, " $1")}
+                      </h3>
+                      <ul className="list-disc pl-6 text-gray-700">
+                        {Array.isArray(recommendations) && recommendations.length > 0 ? (
+                          recommendations.map((recommendation, idx) => (
+                            <li key={idx} className="mb-2">
+                              {recommendation}
+                            </li>
+                          ))
+                        ) : (
+                          <p className="text-sm text-gray-500">No recommendations available.</p>
+                        )}
+                      </ul>
+                    </motion.div>
+                  )
                 )
+              ) : (
+                <p className="text-sm text-gray-500">No additional recommendations available.</p>
               )}
             </ScrollArea.Viewport>
           </ScrollArea.Root>
