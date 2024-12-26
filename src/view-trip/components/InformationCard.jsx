@@ -129,7 +129,6 @@ export default function InformationCard({ trip }) {
       )}
     </div>
   );
-
       case "itinerary":
         return (
           <div>

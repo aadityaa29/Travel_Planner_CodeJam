@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
 import { Button } from "../button";
 import {
   Popover,
@@ -6,7 +6,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
-import axios from "axios"; // Ensure axios is imported
+import axios from "axios";
 import {
   Dialog,
   DialogContent,
@@ -16,7 +16,10 @@ import {
 import { toast } from "sonner";
 
 function Header() {
-  const [user, setUser] = useState(() => JSON.parse(localStorage.getItem("user") || "null"));
+  const [user, setUser] = useState(() => {
+    const storedUser = localStorage.getItem("user");
+    return storedUser ? JSON.parse(storedUser) : null;  // Only parse if there's a valid string
+  });
   const [openDialog, setOpenDialog] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -75,31 +78,69 @@ function Header() {
   };
 
   return (
-    <div className="p-3 flex justify-between items-center px-5 ">
-      <a href="/"><img src="/logo.svg" alt="Logo" className="h-8" /></a>
-      <div>
-        {user ? (
-          <div className="flex items-center gap-3 ">
-            <a href="/create-trip"><Button variant="outline" className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90 transition-all shadow-md">
-              + Create Trip
-            </Button></a>
+    <div className="p-3 flex justify-between items-center px-5">
+      <a href="/">
+        <img src="/logo1.png" alt="Logo" className="h-20 w-22 mt-0 mx-2" />
+      </a>
+      <div className="flex items-center gap-6">
+        {/* Always Visible Buttons */}
+        <a href="/about">
+          <Button
+            variant="outline"
+            className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90 transition-all shadow-md px-4 py-6"
+          >
+            About Us
+          </Button>
+        </a>
+        <a href="/contact">
+          <Button
+            variant="outline"
+            className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90 transition-all shadow-md px-4 py-6"
+          >
+            Contact Us
+          </Button>
+        </a>
 
-            <a href="/my-trips"><Button variant="outline" className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90 transition-all shadow-md">
-              My Trips
-            </Button></a>
+        {/* User-Specific Actions */}
+        {user ? (
+          <div className="flex items-center gap-3">
+            <a href="/create-trip">
+              <Button
+                variant="outline"
+                className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90 transition-all shadow-md px-4 py-6"
+              >
+                + Create Trip
+              </Button>
+            </a>
+
+            <a href="/my-trips">
+              <Button
+                variant="outline"
+                className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90 transition-all shadow-md px-4 py-6"
+              >
+                My Trips
+              </Button>
+            </a>
 
             <Popover>
-              <PopoverTrigger className="px-0 py-0 rounded-full border-none">
+              <PopoverTrigger className="flex items-center space-x-2 px-2 py-2 rounded-full border-none cursor-pointer hover:bg-gray-100 bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition-all shadow-md">
                 <img
                   src={user.picture || "/placeholder.png"} // Use placeholder if picture is missing
                   alt="User Profile"
-                  className="h-[35px] w-[35px] rounded-full border-2 border-blue-500 shadow-md hover:scale-105 transition-transform"
+                  className="h-9 w-9 rounded-full border-2 border-blue-500 shadow-md hover:scale-105 transition-transform"
                 />
+                <span
+                  variant="outline"
+                  className="text-sm font-medium text-gray-700 hover:text-black"
+                >
+                  {user.name || "User"}{" "}
+                  <i className="fas fa-caret-down text-gray-500"></i>
+                </span>
               </PopoverTrigger>
-              <PopoverContent>
+              <PopoverContent className="mt-2 w-48 rounded-lg bg-white shadow-lg border border-gray-200 py-2">
                 <Button
                   variant="outline"
-                  className="w-full rounded-lg bg-red-500 text-white hover:bg-red-600 transition-all shadow-md"
+                  className="w-full px-4 py-2 text-sm rounded-lg bg-red-500 text-white hover:bg-red-600 transition-all shadow-md"
                   onClick={handleLogout}
                 >
                   Logout
