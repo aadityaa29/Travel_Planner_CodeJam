@@ -8,14 +8,14 @@ const teamMembers = [
     role: "Backend Developer & AI Integration Specialist",
     description: "Designing and implementing efficient backend architectures to support the platform’s functionality. Ensuring data security, system performance, and smooth API interactions.",
     image: "/adiphoto.jpeg",
-    social: { twitter: "#", facebook: "#", instagram: "#", linkedin: "https://www.linkedin.com/in/adityapachouri/" }
+    social: { twitter: "#", facebook: "#", instagram: "https://www.instagram.com/aditya_pachouri29?igsh=MTZleHRhN3prdDluaA==", linkedin: "https://www.linkedin.com/in/adityapachouri/" }
   },
   {
     name: "Aaysha Abid",
     role: "Frontend Designer",
     description: "Skilled in UI/UX design, and testing user flows.",
     image: "/ash.png",
-    social: { twitter: "#", facebook: "#", instagram: "#", linkedin: "https://www.linkedin.com/in/aaysha-abid-886228247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
+    social: { twitter: "https://x.com/Aayshaabid23?t=ttBkSMwxah-c1XP4aiTwKg&s=09", facebook: "#", instagram: "https://www.instagram.com/aaysha.23?igsh=azU5OG12Y2FoMjIw", linkedin: "https://www.linkedin.com/in/aaysha-abid-886228247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
   },
   {
     name: "Garv Batra",
@@ -23,6 +23,13 @@ const teamMembers = [
     description: "Designing and developing responsive, user-friendly interfaces that enhance the overall experience.",
     image: "/garv.png",
     social: { twitter: "#", facebook: "https://www.facebook.com/profile.php?id=61552654169416&mibextid=ZbWKwL", instagram: "https://www.instagram.com/garv_batra06?igsh=MTZleHRhN3prdDluaA==", linkedin: "https://www.linkedin.com/in/garv-batra-0655352b2" }
+  },
+  {
+    name: "Ambar Kumar",
+    role: "",
+    description: "Helped in making Logo Design & Frontend Design.",
+    image: "/ambar.png",
+    social: { twitter: "https://x.com/CoderAmbar", facebook: "https://www.facebook.com/profile.php?id=61560526666745", instagram: "https://www.instagram.com/theambarofficial?igsh=MTZleHRhN3prdDluaA==", linkedin: "https://www.linkedin.com/in/coderambar/" }
   },
 ];
 

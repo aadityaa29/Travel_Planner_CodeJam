@@ -195,12 +195,6 @@ export default function InformationCard({ trip }) {
             Plan
           </TabsTrigger>
           <TabsTrigger
-            value="expense"
-            className="data-[state=active]:border-b-2 data-[state=active]:border-blue-500"
-          >
-            Expense Tracker
-          </TabsTrigger>
-          <TabsTrigger
             value="settings"
             className="data-[state=active]:border-b-2 data-[state=active]:border-blue-500"
           >
@@ -215,11 +209,6 @@ export default function InformationCard({ trip }) {
           <div className="p-4">
             <h2 className="text-xl font-semibold mb-4">Discover</h2>
             <nav className="space-y-2">
-              <SidebarItem
-                icon={<LightbulbIcon />}
-                text="Your Imagination"
-                onClick={() => setSelectedSection("imagination")}
-              />
               <SidebarItem
                 icon={<InfoIcon />}
                 text="About the Place"
@@ -266,6 +255,7 @@ export default function InformationCard({ trip }) {
             </div>
           </Card>
 
+          
           {/* Hero Image Section */}
           <InfoSection trip={trip} />
 
