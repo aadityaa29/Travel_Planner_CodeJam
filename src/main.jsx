@@ -10,6 +10,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import ViewTrip from './view-trip/[tripId]/index.jsx'
 import MyTrips from './my-trips/index.jsx'
 import AboutUs from './aboutus/index.jsx'
+import ContactPage from './contactus/index.jsx'
 
 
 const router = createBrowserRouter([
@@ -32,8 +33,11 @@ const router = createBrowserRouter([
   {
     path: '/about',
     element: <AboutUs/>
+  },
+  {
+    path: '/contact',
+    element: <ContactPage/>
   }
-  
 ])
 
 createRoot(document.getElementById('root')).render(

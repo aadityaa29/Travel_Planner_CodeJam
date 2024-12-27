@@ -1,196 +1,124 @@
 import React from "react";
 import { Twitter, Facebook, Instagram, Linkedin } from "lucide-react";
-import { Users, Target, TrendingUp } from "lucide-react";
+import Header from "../components/ui/custom/Header";
 
-// Team data
 const teamMembers = [
   {
-    name: "Walter White",
-    role: "Chief Executive Officer",
-    description: "Explicabo voluptatem mollitia et repellat qui dolorum quasi",
-    image: "/placeholder.svg?height=400&width=400",
-    social: {
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
-      linkedin: "#"
-    }
+    name: "Aditya Pachouri",
+    role: "Backend Developer & AI Integration Specialist",
+    description: "Designing and implementing efficient backend architectures to support the platform’s functionality. Ensuring data security, system performance, and smooth API interactions.",
+    image: "/adiphoto.jpeg",
+    social: { twitter: "#", facebook: "#", instagram: "#", linkedin: "https://www.linkedin.com/in/adityapachouri/" }
   },
   {
-    name: "Sarah Jhonson",
-    role: "Product Manager",
-    description: "Aut maiores voluptates amet et quis praesentium qui senda para",
-    image: "/placeholder.svg?height=400&width=400",
-    social: {
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
-      linkedin: "#"
-    }
+    name: "Aaysha Abid",
+    role: "Frontend Designer",
+    description: "Skilled in UI/UX design, and testing user flows.",
+    image: "/ash.png",
+    social: { twitter: "#", facebook: "#", instagram: "#", linkedin: "https://www.linkedin.com/in/aaysha-abid-886228247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
   },
   {
-    name: "William Anderson",
-    role: "CTO",
-    description: "Quisquam facilis cum velit laborum corrupti fuga rerum quia",
-    image: "/placeholder.svg?height=400&width=400",
-    social: {
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
-      linkedin: "#"
-    }
+    name: "Garv Batra",
+    role: "Frontend Developer",
+    description: "Designing and developing responsive, user-friendly interfaces that enhance the overall experience.",
+    image: "/garv.png",
+    social: { twitter: "#", facebook: "https://www.facebook.com/profile.php?id=61552654169416&mibextid=ZbWKwL", instagram: "https://www.instagram.com/garv_batra06?igsh=MTZleHRhN3prdDluaA==", linkedin: "https://www.linkedin.com/in/garv-batra-0655352b2" }
   },
-  {
-    name: "Amanda Jepson",
-    role: "Accountant",
-    description: "Dolorum tempora officiis odit laborum officiis et et accusamus",
-    image: "/placeholder.svg?height=400&width=400",
-    social: {
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
-      linkedin: "#"
-    }
-  }
-];
-
-// Company features data
-const companyFeatures = [
-  {
-    icon: <Users className="h-8 w-8 text-blue-500" />,
-    title: "Expert Team",
-    description:
-      "Our diverse team of experts brings a wealth of experience and innovation to every project."
-  },
-  {
-    icon: <Target className="h-8 w-8 text-blue-500" />,
-    title: "Client-Focused",
-    description:
-      "We prioritize our clients needs, ensuring tailored solutions and exceptional service."
-  },
-  {
-    icon: <TrendingUp className="h-8 w-8 text-blue-500" />,
-    title: "Continuous Growth",
-    description:
-      "We are committed to ongoing learning and improvement to stay at the forefront of our industry."
-  }
 ];
 
 const AboutUs = () => {
   return (
     <>
-      {/* About Us Section */}
-      <section className="py-16 px-4 md:px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold text-[#2B4C7E] mb-4 inline-block relative">
-              ABOUT US
-              <span className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-400"></span>
-            </h1>
-            <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
-              Discover our story, mission, and the values that drive us to deliver
-              exceptional solutions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-white rounded-lg p-8 shadow-md">
-              <h2 className="text-2xl font-semibold text-[#2B4C7E] mb-4">Our Story</h2>
-              <p className="text-gray-600 mb-4">
-                Founded in 2010, our company has been at the forefront of innovation in our industry.
-                We started with a simple idea: to make complex processes simple and accessible to everyone. 
-                Over the years, we've grown from a small startup to a global leader, always staying true to our core values of integrity, innovation, and customer-centricity.
-              </p>
-              <p className="text-gray-600">
-                Today, we continue to push boundaries and set new standards in our field. Our team of dedicated professionals works tirelessly to bring cutting-edge solutions to our clients, helping them overcome challenges and achieve their goals.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg p-8 shadow-md">
-              <h2 className="text-2xl font-semibold text-[#2B4C7E] mb-4">Our Mission</h2>
-              <p className="text-gray-600 mb-4">
-                Our mission is to empower businesses and individuals with innovative solutions that drive growth and success. We are committed to:
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>Delivering exceptional value to our clients</li>
-                <li>Fostering a culture of continuous learning and improvement</li>
-                <li>Promoting sustainability and social responsibility in all our operations</li>
-                <li>Building long-lasting relationships based on trust and mutual respect</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <div>
+        <Header />
+      </div>
       {/* Team Section */}
-      <section className="px-4 md:px-6 bg-white pb-20">
-        <div className="max-w-7xl mx-auto">
+      <section className=" mt-6 relative px-4 bg-gradient-to-b from-[#ffffff] to-blue-100">
+        <div className="absolute inset-0 bg-pattern bg-opacity-10 pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#2B4C7E] mb-4 inline-block relative">
-              TEAM
-              <span className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-400"></span>
+            <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-500 mb-4">
+              OUR TEAM
             </h2>
             <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
-              Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+              The minds behind your seamless travel experience.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {teamMembers.map((member, index) => (
-              <div key={index} className="bg-white rounded-lg p-8 shadow-md transition-transform hover:-translate-y-1">
+              <div
+                key={index}
+                className="bg-white rounded-lg p-8 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2"
+              >
                 <div className="flex flex-col sm:flex-row items-center gap-6">
-                  <div className="flex-shrink-0">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-[120px] h-[120px] rounded-full object-cover"
-                    />
-                  </div>
-                  <div className="flex-1 text-center sm:text-left">
-                    <h3 className="text-xl font-semibold text-[#2B4C7E] mb-1">{member.name}</h3>
-                    <p className="text-gray-600 mb-3">{member.role}</p>
-                    <p className="text-gray-500 mb-4">{member.description}</p>
-                    <div className="flex justify-center sm:justify-start gap-4">
-                      {member.social.twitter && (
-                        <a
-                          href={member.social.twitter}
-                          className="text-gray-400 hover:text-[#2B4C7E] transition-colors"
-                          aria-label={`${member.name}'s Twitter`}
-                        >
-                          <Twitter className="h-5 w-5" />
-                        </a>
-                      )}
-                      {member.social.facebook && (
-                        <a
-                          href={member.social.facebook}
-                          className="text-gray-400 hover:text-[#2B4C7E] transition-colors"
-                          aria-label={`${member.name}'s Facebook`}
-                        >
-                          <Facebook className="h-5 w-5" />
-                        </a>
-                      )}
-                      {member.social.instagram && (
-                        <a
-                          href={member.social.instagram}
-                          className="text-gray-400 hover:text-[#2B4C7E] transition-colors"
-                          aria-label={`${member.name}'s Instagram`}
-                        >
-                          <Instagram className="h-5 w-5" />
-                        </a>
-                      )}
-                      {member.social.linkedin && (
-                        <a
-                          href={member.social.linkedin}
-                          className="text-gray-400 hover:text-[#2B4C7E] transition-colors"
-                          aria-label={`${member.name}'s LinkedIn`}
-                        >
-                          <Linkedin className="h-5 w-5" />
-                        </a>
-                      )}
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-[120px] h-[120px] rounded-full shadow-lg border-4 border-blue-100"
+                  />
+                  <div>
+                    <h3 className="text-xl font-semibold text-blue-600">{member.name}</h3>
+                    <p className="text-gray-600 text-sm">{member.role}</p>
+                    <p className="text-gray-500 mt-2">{member.description}</p>
+                    <div className="flex gap-4 mt-4">
+                      {Object.entries(member.social).map(([key, link]) => (
+                        link && (
+                          <a
+                            key={key}
+                            href={link}
+                            className="text-gray-400 hover:text-blue-500 transition-colors"
+                            aria-label={`${member.name}'s ${key}`}
+                          >
+                            {key === "twitter" && <Twitter className="h-6 w-6" />}
+                            {key === "facebook" && <Facebook className="h-6 w-6" />}
+                            {key === "instagram" && <Instagram className="h-6 w-6" />}
+                            {key === "linkedin" && <Linkedin className="h-6 w-6" />}
+                          </a>
+                        )
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="relative py-16 px-4 bg-gradient-to-b from-blue-100 to-white">
+        <div className="absolute inset-0 bg-pattern bg-opacity-10 pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-500 mb-4">
+              ABOUT US
+            </h1>
+            <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
+              Discover our story, mission, and the values that inspire us to redefine travel planning.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <div className="bg-white rounded-lg p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all">
+              <h2 className="text-3xl font-bold text-blue-600 mb-4">Our Story</h2>
+              <p className="text-gray-600 mb-4">
+                Founded in 2024, our journey began with a simple idea: to make travel planning seamless, accessible, and truly personalized.
+              </p>
+              <p className="text-gray-600">
+                Today, we continue to push boundaries and set new standards in our field. Our team of dedicated professionals works tirelessly to bring cutting-edge solutions to our clients.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all">
+              <h2 className="text-3xl font-bold text-blue-600 mb-4">Our Mission</h2>
+              <p className="text-gray-600 mb-4">
+                Our mission is to revolutionize travel planning by harnessing the power of AI to create personalized and hassle-free experiences.
+              </p>
+              <ul className="list-disc list-inside text-gray-600 space-y-2">
+                <li>Delivering exceptional value through innovative travel solutions</li>
+                <li>Continuously improving to meet the evolving needs of modern travelers</li>
+                <li>Promoting sustainability and responsible travel practices</li>
+                <li>Building a community of trust, transparency, and shared wanderlust</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
